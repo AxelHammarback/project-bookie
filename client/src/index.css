@@ -1,0 +1,93 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&display=swap");
+/* Primary color: #FF4370 */
+
+
+* {
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  background-color: #B6C0CE;
+}
+
+p, h1, h2, h3, h4, h5 {
+  margin: 0;
+}
+
+p {
+  font-weight: 500;
+}
+
+main {
+  width: 375px;
+  height: 667px;
+  margin: 0 auto;
+  margin-top: 64px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 8px;
+  box-shadow: 0 16px 32px 0 rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+}
+
+.page-content {
+  flex-grow: 1;
+  overflow: scroll;
+  background-color: #F0F4FA;
+  padding: 16px;
+}
+
+.debug {
+  /* border: 1px dashed salmon; */
+}
+
+.grow {
+  flex-grow: 1;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.navbar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  height: 64px;
+  color: rgba(0, 0, 0, 0.87);
+  background-color: #fff;
+  width: 100%;
+  box-shadow: inset 0px 1px 0px rgba(0, 0, 0, 0.15);
+}
+
+a, a:visited, a:hover {
+  color: rgba(0, 0, 0, 0.87);
+  text-decoration: none;
+  font-weight: 500;
+  height: 100%;
+}
+
+a.active {
+  color: #FF4370;
+  font-weight: 600;
+  box-shadow: inset 0 -2px 0 #FF4370;
+}
+
+.navbar * {
+  display: flex;
+  flex: 1;
+}
+
+.navbar li {
+  /* border: 1px dashed blueviolet; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

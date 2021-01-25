@@ -1,0 +1,38 @@
+[
+  {
+    "title": "Antiken",
+    "author": "Hanna Johansson",
+    "hasRead": false,
+    "dateRead": null,
+    "thumbnail": "http://books.google.com/books/content?id=q2jvDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+    "myRating": null,
+    "googleId": "q2jvDwAAQBAJ"
+  },
+  {
+    "title": "Arv och miljö",
+    "author": "Vigdis Hjorth",
+    "hasRead": true,
+    "dateRead": null,
+    "thumbnail": "http://books.google.com/books/content?id=8opsDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+    "myRating": 4,
+    "googleId": "8opsDwAAQBAJ"
+  },
+  {
+    "title": "Americanah",
+    "author": "Chimamanda Ngozi Adichie",
+    "hasRead": true,
+    "dateRead": null,
+    "thumbnail": "http://books.google.com/books/content?id=xllgAgAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+    "myRating": 5,
+    "googleId": "xllgAgAAQBAJ"
+  },
+  {
+    "title": "Eileen",
+    "author": "Ottessa Moshfegh",
+    "hasRead": false,
+    "dateRead": null,
+    "thumbnail": "http://books.google.com/books/content?id=2wBbDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+    "myRating": null,
+    "googleId": "2wBbDwAAQBAJ"
+  }
+]
