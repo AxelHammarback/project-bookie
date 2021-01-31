@@ -28,6 +28,12 @@
 
 .card-info-bottom {
   /* border: 1px dashed blueviolet; */
+  display: flex;
+  flex-direction: row;
+}
+
+.card-info-bottom button {
+  margin-right: 8px;
 }
 
 .card-thumbnail {

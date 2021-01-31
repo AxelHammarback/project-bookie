@@ -9,6 +9,35 @@ export const WantToRead = () => {
     fetchBooks()
   }, [])
 
+  const setReadStatusToTrue = (_id) => {
+    fetch(`http://localhost:8080/books/${_id}`, {
+      method: 'PATCH',
+      body: JSON.stringify({ isRead: false }),
+      headers: { 'Content-Type': 'application/json' },
+    })
+      .then(res =>
+        res.json().then(json => {
+          console.log("Book updated so that the read status is 'true'")
+          fetchBooks()
+          return json;
+        })
+      );
+  }
+
+  const deleteBook = (_id) => {
+    fetch(`http://localhost:8080/books/${_id}`, {
+      method: 'DELETE'
+      // headers: { 'Content-Type': 'application/json' },
+    })
+      .then(res =>
+        res.json().then(json => {
+          console.log("Book deleted successfully")
+          fetchBooks()
+          return json;
+        })
+      );
+  }
+
   const fetchBooks = () => {
     // do a fetch to the local database
     fetch(BOOKS_URL)
@@ -32,12 +61,15 @@ export const WantToRead = () => {
         {
           books.map(book => (
             <BookCardWantToRead
+              _id={book._id}
               author={book.author}
               title={book.title}
               googleId={book.googleId}
               isRead={book.isRead}
               thumbnail={book.thumbnail}
               key={book._id}
+              onDeleteBook={deleteBook}
+              onMarkAsRead={setReadStatusToTrue}
             />
           ))
         }

@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { BookCardWantToRead } from './BookCardWantToRead'
+import { BookCardHasRead } from './BookCardHasRead'
 
 export const HasRead = () => {
   const BOOKS_URL = 'http://localhost:8080/books/isRead'
@@ -8,6 +8,35 @@ export const HasRead = () => {
   useEffect(() => {
     fetchBooks()
   }, [])
+
+  const setReadStatusToFalse = (_id) => {
+    fetch(`http://localhost:8080/books/${_id}`, {
+      method: 'PATCH',
+      body: JSON.stringify({ isRead: true }),
+      headers: { 'Content-Type': 'application/json' },
+    })
+      .then(res =>
+        res.json().then(json => {
+          console.log("Book updated so that the read status is 'false'")
+          fetchBooks()
+          return json;
+        })
+      );
+  }
+
+  const deleteBook = (_id) => {
+    fetch(`http://localhost:8080/books/${_id}`, {
+      method: 'DELETE'
+      // headers: { 'Content-Type': 'application/json' },
+    })
+      .then(res =>
+        res.json().then(json => {
+          console.log("Book deleted successfully")
+          fetchBooks()
+          return json;
+        })
+      );
+  }
 
   const fetchBooks = () => {
     // do a fetch to the local database
@@ -31,13 +60,16 @@ export const HasRead = () => {
       <section className="card-list">
         {
           books.map(book => (
-            <BookCardWantToRead
+            <BookCardHasRead
+              _id={book._id}
               author={book.author}
               title={book.title}
               googleId={book.googleId}
               isRead={book.isRead}
               thumbnail={book.thumbnail}
               key={book._id}
+              onDeleteBook={deleteBook}
+              onMarkAsNotRead={setReadStatusToFalse}
             />
           ))
         }

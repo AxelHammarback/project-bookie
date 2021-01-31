@@ -34,5 +34,32 @@
     "thumbnail": "http://books.google.com/books/content?id=2wBbDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
     "myRating": null,
     "googleId": "2wBbDwAAQBAJ"
+  },
+  {
+    "title": "Strega",
+    "author": "Johanne Lykke Holm",
+    "hasRead": false,
+    "dateRead": null,
+    "thumbnail": "http://books.google.com/books/content?id=89vODwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+    "myRating": null,
+    "googleId": "89vODwAAQBAJ"
+  },
+  {
+    "title": "Kirke",
+    "author": "Madeline Miller",
+    "hasRead": false,
+    "dateRead": null,
+    "thumbnail": "http://books.google.com/books/content?id=okOaDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+    "myRating": null,
+    "googleId": "okOaDwAAQBAJ"
+  },
+  {
+    "title": "Ya Leila",
+    "author": "Donia Saleh",
+    "hasRead": false,
+    "dateRead": null,
+    "thumbnail": "http://books.google.com/books/content?id=pLvoDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api",
+    "myRating": null,
+    "googleId": "pLvoDwAAQBAJ"
   }
 ]
