@@ -14,6 +14,12 @@ body {
   background-color: #f0f4fa;
   display: flex;
   justify-content: center;
+  /* border: 2px dashed salmon; */
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
 p,
@@ -30,30 +36,26 @@ p {
 }
 
 main {
-  max-width: 1200px;
   width: 100%;
-  height: 900px;
-  border: 2px dashed green;
-  margin: 0 auto;
-  margin-top: 64px;
+  height: 100%;
+  /* border: 2px dashed green; */
   display: flex;
   flex-direction: column;
-  padding: 8px;
-  /* overflow: hidden; */
-  /* resize: both; */
+  position: absolute;
+  left: 0;
+  right: 0;
+  
 }
 
 .page-content {
-  border: 2px dashed #7B61FF;
+  /* border: 2px dashed #7B61FF; */
   flex-grow: 1;
   overflow: scroll;
   background-color: #f0f4fa;
-  padding: 16px;
+  /* padding: 16px; */
   max-width: 560px;
-}
-
-.debug {
-  /* border: 1px dashed salmon; */
+  width: 100%;
+  margin: 0 auto;
 }
 
 .grow {
@@ -75,16 +77,26 @@ ul {
   background-color: #fff;
   width: 100%;
   box-shadow: inset 0px 1px 0px rgba(0, 0, 0, 0.15);
-  border: 2px dashed hotpink;
+  /* DEBUG */
+  /* border: 2px dashed hotpink; */
 }
 
 a,
-a:visited,
-a:hover {
+a:visited {
   color: rgba(0, 0, 0, 0.87);
   text-decoration: none;
   font-weight: 500;
   height: 100%;
+  outline: 0;
+}
+
+a:hover {
+  background-color: rgba(0, 0, 0, 0.02);
+}
+
+a:focus {
+  box-shadow: inset 0 0 0 2px rgba(0, 0, 0, 0.15);
+  /* background-color: rgba(0, 0, 0, 0.05); */
 }
 
 a.active {
@@ -105,3 +117,55 @@ a.active {
   justify-content: center;
 }
 
+@media screen and (min-width: 720px) {
+  body {
+    /* padding-top: 64px; */
+  }
+
+  main {
+    flex-direction: row-reverse;
+    width: 720px;
+    margin: 0 auto;
+    /* margin-top: 64px; */
+    /* padding-bottom: 64px; */
+    border: 2px dashed violet;
+    /* height: auto; */
+    flex-grow: 1;
+  }
+
+  .navbar {
+    /* -ms-flex-order: 0; */
+    flex-direction: column;
+    height: auto;
+    width: 160px;
+    box-shadow: none;
+    margin-right: 24px;
+    margin-top: 82px;
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
+  }
+
+  .navbar a {
+    height: 64px;
+    width: 100%;
+    padding: 16px;
+  }
+
+  a.active {
+    color: #ff4370;
+    font-weight: 600;
+    box-shadow: inset -4px 0px 0 #ff4370;
+  }
+
+  .navbar li {
+    /* Aligns text to the left in desktop */
+    justify-content: start;
+  }
+
+  .page-content {
+    /* -ms-flex-order: 1; */
+    /* flex-grow: 1; */
+  }
+
+}

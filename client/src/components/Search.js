@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react'
+
 import { BookCardSearch } from './BookCardSearch'
+import { Header } from './Header'
+import './search.css'
 
 export const Search = () => {
   const [searchResults, setSearchResults] = useState([])
@@ -22,8 +25,11 @@ export const Search = () => {
   }
 
   return (
-    <div className="debug grow">
-      <p>Search</p>
+    <div>
+      <Header
+        key="search"
+        title="Search" 
+      />
       <form onSubmit={handleSubmit}>
         <input
           type="text"
@@ -31,7 +37,7 @@ export const Search = () => {
           value={searchQuery}
           onChange={e => setSearchQuery(e.target.value)}
         />
-        <button>Search</button>
+        <button className="button-search">Search</button>
       </form>
       {
         searchResults.map(book => (

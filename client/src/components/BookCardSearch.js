@@ -41,7 +41,7 @@ export const BookCardSearch = (props) => {
           <p className="p-author">{props.author}</p>
         </div>
         <div className="card-info-bottom">
-          <button onClick={()=> addBook(props)}>Add</button>
+          <button className="button-primary" onClick={()=> addBook(props)}>Add</button>
         </div>
       </div>
       <div className="card-actions">

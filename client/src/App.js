@@ -1,5 +1,6 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
+
 import { Header } from './components/Header'
 import { Nav } from './components/Nav'
 import { WantToRead } from './components/WantToRead'
@@ -38,7 +39,7 @@ export const App = () => {
       <BrowserRouter>
         <main>
           <div className="page-content">
-          <Header />
+          {/* <Header /> */}
             <Switch>
 
               <Route path="/" exact>

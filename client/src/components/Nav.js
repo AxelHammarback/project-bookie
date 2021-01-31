@@ -6,7 +6,7 @@ export const Nav = () => {
     <div className="debug">
 
       <ul className="navbar">
-        <NavLink to="/">
+        <NavLink exact to="/">
           <li>Want to read</li>
         </NavLink>
         <NavLink to="/hasread">

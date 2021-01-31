@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
+
 import { BookCardWantToRead } from './BookCardWantToRead'
+import { Header } from './Header'
 
 export const WantToRead = () => {
   const BOOKS_URL = 'http://localhost:8080/books/wantToRead'
@@ -57,6 +59,10 @@ export const WantToRead = () => {
 
   return (
     <div className="debug grow">
+      <Header
+        key="wantToRead"
+        title="Want to read" 
+      />
       <section className="card-list">
         {
           books.map(book => (
