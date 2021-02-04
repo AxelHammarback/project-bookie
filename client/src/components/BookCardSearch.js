@@ -21,7 +21,6 @@ export const BookCardSearch = (props) => {
     })
       .then(() => {
         console.log(bookObject.thumbnail)
-        // When the message is done being posted, fetch the messages again, so the new post is visible.
         console.log(`Book ${bookObject.title} added`)
       })
   }
