@@ -135,11 +135,6 @@ app.patch('/books/:bookId', async (req, res) => {
 
 })
 
-
-// Change the isRead status from "false" to "true"
-// 🚨 TO DO
-
-
 // Start the server
 app.listen(port, () => {
   console.log(`Server running on http://localhost:${port}`)
