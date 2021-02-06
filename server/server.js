@@ -102,38 +102,50 @@ app.delete('/books/:bookId', async (req, res) => {
   }
 })
 
-// Change the isRead status from "true" to "false". Checks the readStatus (from the body of the request), and updates the entry with the value.
+// Change the isRead status from "true" to "false", and vice versa. Checks the readStatus (from the body of the request), and updates the entry with the value.
 app.patch('/books/:bookId', async (req, res) => {
   const { bookId } = req.params
-  
-    if (req.body.isRead === true) {
-      console.log("Inside changing to false")
-      try {
-        await Book.findOneAndUpdate(
-          { _id: bookId },
-          { isRead: false },
-          { new: true }
-        )
-        res.status(200).json({ success: "Entry updated, you have not read it" })
-      } catch {
-        res.status(500).json({ message: "Could not update entry" })
-      }
-      
-    } else if (req.body.isRead === false) {
-      console.log("Inside changing to true")
-      try {
-        await Book.findOneAndUpdate(
-          { _id: bookId },
-          { isRead: true },
-          { new: true }
-        )
-        res.status(200).json({ success: "Entry updated, you have read it" })
-      } catch {
-        res.status(500).json({ message: "Could not update entry" })
-      }
+  if (req.body.isRead === true) {
+    console.log("Inside changing to false")
+    try {
+      await Book.findOneAndUpdate(
+        { _id: bookId },
+        { isRead: false },
+        { new: true }
+      )
+      res.status(200).json({ success: "Entry updated, you have not read it" })
+    } catch {
+      res.status(500).json({ message: "Could not update entry" })
     }
-
+  } else if (req.body.isRead === false) {
+    console.log("Inside changing to true")
+    try {
+      await Book.findOneAndUpdate(
+        { _id: bookId },
+        { isRead: true },
+        { new: true }
+      )
+      res.status(200).json({ success: "Entry updated, you have read it" })
+    } catch {
+      res.status(500).json({ message: "Could not update entry" })
+    }
+  }
 })
+
+// Endpoint that sets the rating of a book
+// app.patch('/books/setRating/:bookId/:bookRating', async (req, res) => {
+//   const { bookId, bookRating } = req.params
+//   try {
+//     await Book.findOneAndUpdate(
+//       { _id: bookId },
+//       { rating: bookRating },
+//       { new: true }
+//     )
+//     res.status(200).json({success: `Set the new book rating to ${bookRating}.`})
+//   } catch {
+//     res.status(500).json({message: `Could not set new book rating`})
+//   }
+// })
 
 // Start the server
 app.listen(port, () => {

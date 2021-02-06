@@ -25,7 +25,13 @@ export const BookCardHasRead = (props) => {
           <h3 className="h3-title">{props.title}</h3>
           <p className="p-author">{props.author}</p>
         </div>
-
+        <div className="container-rating">
+          <button className="button-rating">1</button>
+          <button className="button-rating">2</button>
+          <button className="button-rating">3</button>
+          <button className="button-rating">4</button>
+          <button className="button-rating">5</button>
+        </div>
         <div className="card-info-bottom">
           <button className="button-primary" onClick={() => onMarkAsNotRead()}>Un-read</button>
           <button className="button-primary" onClick={() => onDeleteBook()}>Remove</button>
