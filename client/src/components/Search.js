@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 
 import { BookCardSearch } from './BookCardSearch'
 import { Header } from './Header'
-// import './search.css'
+import ic_search_white from '../assets/search-white.svg'
 import './searchbar.css'
 export const Search = () => {
   const [searchResults, setSearchResults] = useState([])
@@ -24,11 +24,10 @@ export const Search = () => {
       })
   }
 
-
   return (
     <div>
       <Header
-        key="search"
+        icon="ic_search"
         title="Search"
       />
       <form onSubmit={handleSubmit}>
@@ -42,7 +41,7 @@ export const Search = () => {
         <button
           className="button-search"
           disabled={searchQuery < 1}
-        >Search</button>
+        ><img src={ic_search_white}/></button>
       </form>
 
       {

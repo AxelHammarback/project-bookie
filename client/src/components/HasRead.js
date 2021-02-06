@@ -61,7 +61,7 @@ export const HasRead = () => {
 
     <div>
       <Header
-        key="isRead"
+        icon="ic_isRead"
         title="Books I've read" 
       />
       <section className="card-list">

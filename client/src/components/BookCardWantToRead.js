@@ -32,7 +32,7 @@ export const BookCardWantToRead = (props) => {
         </div>
       </div>
       <div className="card-actions">
-        <p>◆</p>
+        {/* <p>◆</p> */}
       </div>
     </div >
   )

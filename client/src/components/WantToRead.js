@@ -60,7 +60,7 @@ export const WantToRead = () => {
   return (
     <div className="debug grow">
       <Header
-        key="wantToRead"
+        icon="ic_wantToRead"
         title="Want to read" 
       />
       <section className="card-list">
