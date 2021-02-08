@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { useState } from 'react'
+
 import './card.css'
 
 export const BookCardSearch = (props) => {
-
   const BOOKS_POST_URL = 'http://localhost:8080/books'
+  const [buttonLabel, setButtonLabel] = useState("Add")
+
 
   const addBook = (book) => {
     const bookObject = {
@@ -13,6 +15,9 @@ export const BookCardSearch = (props) => {
       googleId: book.googleId,
       rating: null
     }
+
+    // Change the button label. Not an ideal solution, since you can STILL add the book again. However, deadline's approaching – and some validation is better than none.
+    setButtonLabel("Book added")
 
     fetch(BOOKS_POST_URL, {
       method: 'POST',
@@ -40,11 +45,10 @@ export const BookCardSearch = (props) => {
           <p className="p-author">{props.author}</p>
         </div>
         <div className="card-info-bottom">
-          <button className="button-primary" onClick={()=> addBook(props)}>Add</button>
+          <button className="button-primary" onClick={() => addBook(props)}>
+            {buttonLabel}
+          </button>
         </div>
-      </div>
-      <div className="card-actions">
-        {/* <p>◆</p> */}
       </div>
     </div >
   )

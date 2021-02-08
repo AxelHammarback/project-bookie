@@ -46,7 +46,6 @@ export const Search = () => {
 
       {
         searchResults.map(book => (
-          // console.log(typeof book.volumeInfo.imageLinks.thumbnail),
           <BookCardSearch
             // Since some entries had "undefined" as author, we need to check whether the author(s) exist or not.
             author={

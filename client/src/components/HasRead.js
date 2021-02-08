@@ -28,16 +28,29 @@ export const HasRead = () => {
 
   const deleteBook = (_id) => {
     fetch(`http://localhost:8080/books/${_id}`, {
-      method: 'DELETE'
+      method: 'DELETE',
       // headers: { 'Content-Type': 'application/json' },
     })
       .then(res =>
         res.json().then(json => {
           console.log("Book deleted successfully")
           fetchBooks()
-          return json;
+          return json
         })
-      );
+      )
+  }
+
+  const rateBook = (_id, rating) => {
+    fetch(`http://localhost:8080/books/setRating/${_id}/${rating}`, {
+      method: 'PATCH'
+    })
+      .then(res =>
+        res.json().then(json => {
+          console.log("Rating edited successfully")
+          fetchBooks()
+          return json
+        })
+      )
   }
 
   const fetchBooks = () => {
@@ -62,7 +75,7 @@ export const HasRead = () => {
     <div>
       <Header
         icon="ic_isRead"
-        title="Books I've read" 
+        title="Books I've read"
       />
       <section className="card-list">
         {
@@ -74,7 +87,9 @@ export const HasRead = () => {
               googleId={book.googleId}
               isRead={book.isRead}
               thumbnail={book.thumbnail}
+              rating={book.rating}
               key={book._id}
+              onRateBook={rateBook}
               onDeleteBook={deleteBook}
               onMarkAsNotRead={setReadStatusToFalse}
             />
