@@ -43,7 +43,6 @@ main {
   position: absolute;
   left: 0;
   right: 0;
-  
 }
 
 .page-content {
@@ -53,7 +52,10 @@ main {
   max-width: 560px;
   width: 100%;
   margin: 0 auto;
-  padding: 16px 16px 0 16px;
+}
+
+.card-list {
+  padding: 0 16px 0 16px;
 }
 
 .grow {

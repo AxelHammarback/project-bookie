@@ -8,7 +8,7 @@ export const Search = () => {
   const [searchResults, setSearchResults] = useState([])
   const [searchQuery, setSearchQuery] = useState('')
 
-  // Function that handles the search.
+  // Function that takes the state variable searchQuery and uses it to search the Google Books API.
   const handleSubmit = (event) => {
     event.preventDefault()
 
@@ -41,30 +41,32 @@ export const Search = () => {
         <button
           className="button-search"
           disabled={searchQuery < 1}
-        ><img src={ic_search_white}/></button>
+        >
+          <img src={ic_search_white} />
+        </button>
       </form>
-
-      {
-        searchResults.map(book => (
-          <BookCardSearch
-            // Since some entries had "undefined" as author, we need to check whether the author(s) exist or not.
-            author={
-              Array.isArray(book.volumeInfo.authors)
-                ? book.volumeInfo.authors[0]
-                : 'Unknown author'
-            }
-            title={book.volumeInfo.title}
-            thumbnail={
-              // Since some entries didn't have a thumbnail, we need to check whether the thumbnail exists or not.
-              typeof book.volumeInfo.imageLinks !== "undefined"
-                ? book.volumeInfo.imageLinks.thumbnail
-                : "Has no image"
-            }
-            key={book.id}
-          />
-          // <p>{book.volumeInfo.title}</p>
-        ))
-      }
+      <section className="card-list">
+        {
+          searchResults.map(book => (
+            <BookCardSearch
+              // Since some entries had "undefined" as author, we need to check whether the author(s) exist or not.
+              author={
+                Array.isArray(book.volumeInfo.authors)
+                  ? book.volumeInfo.authors[0]
+                  : 'Unknown author'
+              }
+              title={book.volumeInfo.title}
+              thumbnail={
+                // Since some entries didn't have a thumbnail, we need to check whether the thumbnail exists or not.
+                typeof book.volumeInfo.imageLinks !== "undefined"
+                  ? book.volumeInfo.imageLinks.thumbnail
+                  : "Has no image"
+              }
+              key={book.id}
+            />
+          ))
+        }
+      </section>
     </div>
   )
 }
