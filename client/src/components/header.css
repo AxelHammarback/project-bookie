@@ -1,7 +1,6 @@
 .header {
   height: 64px;
   padding-top: 32px;
-  /* box-shadow: 0 1px 0 rgba(0,0,0,0.15); */
   padding: 16px;
   background-color: #f0f4fa;
   color: #ff4370;
@@ -16,11 +15,10 @@
 
 @media screen and (min-width: 720px) {
   .header {
-    align-items: flex-end;
-    height: 94px;
-    padding: 24px 8px;
+    /* align-items: flex-end; */
+    height: 112px;
+    padding: 32px 8px 8px 8px;
   }
-
 }
 
 .icon-container-header {

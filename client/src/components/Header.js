@@ -16,7 +16,7 @@ export const Header = (props) => {
   }
 
   return (
-    <div className="debug header">
+    <div className="header">
       <div className="icon-container-header">
         {icon}
       </div>

@@ -10,11 +10,9 @@
 
 body {
   margin: 0;
-  /* background-color: #b6c0ce; */
   background-color: #f0f4fa;
   display: flex;
   justify-content: center;
-  /* border: 2px dashed salmon; */
   position: absolute;
   top: 0;
   right: 0;
@@ -109,7 +107,6 @@ a.active {
 }
 
 .navbar li {
-  /* border: 1px dashed blueviolet; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -120,7 +117,6 @@ a.active {
     flex-direction: row-reverse;
     width: 720px;
     margin: 0 auto;
-    /* border: 2px dashed violet; */
     flex-grow: 1;
   }
 
@@ -130,7 +126,7 @@ a.active {
     width: 160px;
     box-shadow: none;
     margin-right: 24px;
-    margin-top: 97px;
+    margin-top: 112px;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.15);
@@ -158,6 +154,5 @@ a.active {
 
   .page-content {
     padding: 0px 8px 0 8px;
-    /* border: 1px dashed salmon; */
   }
 }
