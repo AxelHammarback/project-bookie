@@ -2,7 +2,7 @@ import express from 'express'
 import bodyParser from 'body-parser'
 import cors from 'cors'
 import mongoose from 'mongoose'
-
+import listEndpoints from 'express-list-endpoints';
 import booksData from './data/books.json'
 
 const mongoUrl = process.env.MONGO_URL || 'mongodb://localhost/project-bookie'
@@ -30,10 +30,9 @@ const Book = new mongoose.model('Book', {
   },
   rating: {
     type: Number,
-    default: null
+    default: 0
   },
 })
-
 
 if (process.env.RESET_DATABASE) {
   const populateDatabase = async () => {
@@ -50,7 +49,7 @@ if (process.env.RESET_DATABASE) {
 
 // Start defining your routes here
 app.get('/', (req, res) => {
-  res.send('Yo this is the book project')
+  res.send(listEndpoints(app));
 
 })
 
@@ -133,19 +132,19 @@ app.patch('/books/:bookId', async (req, res) => {
 })
 
 // Endpoint that sets the rating of a book
-// app.patch('/books/setRating/:bookId/:bookRating', async (req, res) => {
-//   const { bookId, bookRating } = req.params
-//   try {
-//     await Book.findOneAndUpdate(
-//       { _id: bookId },
-//       { rating: bookRating },
-//       { new: true }
-//     )
-//     res.status(200).json({success: `Set the new book rating to ${bookRating}.`})
-//   } catch {
-//     res.status(500).json({message: `Could not set new book rating`})
-//   }
-// })
+app.patch('/books/setRating/:bookId/:bookRating', async (req, res) => {
+  const { bookId, bookRating } = req.params
+  try {
+    await Book.findOneAndUpdate(
+      { _id: bookId },
+      { rating: bookRating },
+      { new: true }
+    )
+    res.status(200).json({ success: `Set the new book rating to ${bookRating}.` })
+  } catch {
+    res.status(500).json({ message: `Could not set new book rating` })
+  }
+})
 
 // Start the server
 app.listen(port, () => {
