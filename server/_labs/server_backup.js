@@ -3,7 +3,7 @@ import bodyParser from 'body-parser'
 import cors from 'cors'
 import mongoose from 'mongoose'
 import listEndpoints from 'express-list-endpoints';
-import booksData from './data/books.json'
+import booksData from '../data/books.json'
 
 const mongoUrl = process.env.MONGO_URL || 'mongodb://localhost/project-bookie'
 mongoose.connect(mongoUrl, { useNewUrlParser: true, useUnifiedTopology: true })
@@ -34,17 +34,35 @@ const Book = new mongoose.model('Book', {
   },
 })
 
+if (process.env.RESET_DATABASE) {
+  const populateDatabase = async () => {
+    // Clear database
+    await Book.deleteMany()
+
+    booksData.forEach(async bookItem => {
+      const newBook = new Book(bookItem)
+      await newBook.save()
+    })
+  }
+  populateDatabase()
+}
+
+// Start defining your routes here
 app.get('/', (req, res) => {
   res.send(listEndpoints(app));
+
 })
 
-// ⤵ 1. Get all books
+// ========== MY ENDPOINTS ========== //
+
+
+// 1. Get all books
 app.get('/books', async (req, res) => {
   const allBooks = await Book.find()
   res.json(allBooks)
 })
 
-// ⤵ 2. Post a new book
+// 2. Post a new book
 app.post('/books', async (req, res) => {
   try {
     // Success code – what happens if all goes well. We need to take a few things out of the body, and save them into the database.
@@ -60,19 +78,19 @@ app.post('/books', async (req, res) => {
   }
 })
 
-// ⤵ 3. Get all books with isRead: false
+// 3. Get all books with isRead: true
 app.get('/books/wantToRead', async (req, res) => {
   const allBooks = await Book.find({ isRead: false })
   res.json(allBooks)
 })
 
-// ⤵ 4. Get all books with isRead = true
+// 3. Get all books with "isRead" = true
 app.get('/books/isRead', async (req, res) => {
   const readBooks = await Book.find({ isRead: true })
   res.json(readBooks)
 })
 
-// ⤵ 5. Remove a book
+// 4. Remove a book
 app.delete('/books/:bookId', async (req, res) => {
   const { bookId } = req.params
   try {
@@ -83,7 +101,7 @@ app.delete('/books/:bookId', async (req, res) => {
   }
 })
 
-// ⤵ 6. Change the isRead status from "true" to "false", and vice versa. Checks the readStatus (from the body of the request), and updates the entry with the value.
+// Change the isRead status from "true" to "false", and vice versa. Checks the readStatus (from the body of the request), and updates the entry with the value.
 app.patch('/books/:bookId', async (req, res) => {
   const { bookId } = req.params
   if (req.body.isRead === true) {
@@ -113,7 +131,7 @@ app.patch('/books/:bookId', async (req, res) => {
   }
 })
 
-// ⤵ 7. Endpoint that sets the rating of a book
+// Endpoint that sets the rating of a book
 app.patch('/books/setRating/:bookId/:bookRating', async (req, res) => {
   const { bookId, bookRating } = req.params
   try {

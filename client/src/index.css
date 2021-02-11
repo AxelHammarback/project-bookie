@@ -112,6 +112,15 @@ a.active {
   justify-content: center;
 }
 
+.bookie-logo-static { 
+  display: none;
+  /* height: 32px;
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  z-index: 1; */
+}
+
 @media screen and (min-width: 720px) {
   main {
     flex-direction: row-reverse;
@@ -154,5 +163,13 @@ a.active {
 
   .page-content {
     padding: 0px 8px 0 8px;
+  }
+
+  .bookie-logo-static { 
+    height: 48px;
+    position: absolute;
+    bottom: 24px;
+    left: 24px;
+    display: inline;
   }
 }

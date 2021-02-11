@@ -6,36 +6,16 @@ import { Nav } from './components/Nav'
 import { WantToRead } from './components/WantToRead'
 import { HasRead } from './components/HasRead'
 import { Search } from './components/Search'
+import bookieLogo from './assets/bookie-logo-60px.svg' 
+
 import 'index.css'
 import './components/button.css'
 
 export const App = () => {
-  const BOOKS_POST_URL = 'http://localhost:8080/books'
-
-  // const addBook = (book) => {
-  //   const bookObject = {
-  //     title: book.title,
-  //     author: book.author,
-  //     thumbnail: book.thumbnail,
-  //     googleId: book.googleId,
-  //     rating: null
-  //   }
-
-  //   fetch(BOOKS_POST_URL, {
-  //     method: 'POST',
-  //     headers: { 'Content-Type': 'application/json' },
-  //     body: JSON.stringify(bookObject)
-  //   })
-  //     .then(() => {
-  //       console.log(bookObject.thumbnail)
-  //       // When the message is done being posted, fetch the messages again, so the new post is visible.
-  //       console.log(`Book ${bookObject.title} added`)
-  //     })
-  // }
-
 
   return (
     <>
+      <img className="bookie-logo-static" src={bookieLogo}/>
       <BrowserRouter>
         <main>
           <div className="page-content">
