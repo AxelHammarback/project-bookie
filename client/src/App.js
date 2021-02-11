@@ -1,11 +1,10 @@
 import React from 'react'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-import { Header } from './components/Header'
 import { Nav } from './components/Nav'
-import { WantToRead } from './components/WantToRead'
-import { HasRead } from './components/HasRead'
-import { Search } from './components/Search'
+import { WantToRead } from './pages/WantToRead'
+import { HasRead } from './pages/HasRead'
+import { Search } from './pages/Search'
 import bookieLogo from './assets/bookie-logo-60px.svg' 
 
 import 'index.css'
@@ -19,7 +18,6 @@ export const App = () => {
       <BrowserRouter>
         <main>
           <div className="page-content">
-          {/* <Header /> */}
             <Switch>
 
               <Route path="/" exact>

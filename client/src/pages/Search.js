@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 
-import { BookCardSearch } from './BookCardSearch'
-import { Header } from './Header'
+import { BookCardSearch } from '../components/BookCardSearch'
+import { Header } from '../components/Header'
 import ic_search_white from '../assets/search-white.svg'
-import './searchbar.css'
+import '../components/searchbar.css'
+
 export const Search = () => {
   const [searchResults, setSearchResults] = useState([])
   const [searchQuery, setSearchQuery] = useState('')

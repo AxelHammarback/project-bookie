@@ -114,11 +114,6 @@ a.active {
 
 .bookie-logo-static { 
   display: none;
-  /* height: 32px;
-  position: absolute;
-  top: 16px;
-  right: 16px;
-  z-index: 1; */
 }
 
 @media screen and (min-width: 720px) {
@@ -162,7 +157,7 @@ a.active {
   }
 
   .page-content {
-    padding: 0px 8px 0 8px;
+    padding: 0px 8px 48px 8px;
   }
 
   .bookie-logo-static { 

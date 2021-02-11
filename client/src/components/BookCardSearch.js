@@ -6,7 +6,6 @@ export const BookCardSearch = (props) => {
   const BOOKS_POST_URL = 'http://localhost:8080/books'
   const [buttonLabel, setButtonLabel] = useState("Add")
 
-
   const addBook = (book) => {
     const bookObject = {
       title: book.title,

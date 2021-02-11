@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
-import { BookCardHasRead } from './BookCardHasRead'
-import { Header } from './Header'
+import { BookCardHasRead } from '../components/BookCardHasRead'
+import { Header } from '../components/Header'
 
 export const HasRead = () => {
   const BOOKS_URL = 'http://localhost:8080/books/isRead'

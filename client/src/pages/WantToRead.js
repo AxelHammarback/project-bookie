@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 
-import { BookCardWantToRead } from './BookCardWantToRead'
-import { Header } from './Header'
+import { BookCardWantToRead } from '../components/BookCardWantToRead'
+import { Header } from '../components/Header'
 
 export const WantToRead = () => {
   const BOOKS_URL = 'http://localhost:8080/books/wantToRead'
@@ -83,12 +83,3 @@ export const WantToRead = () => {
     </div>
   )
 }
-
-// author: "Hanna Johansson"
-// dateRead: null
-// googleId: "q2jvDwAAQBAJ"
-// isRead: false
-// thumbnail: "http://books.google.com/books/content?id=q2jvDwAAQBAJ&printsec=frontcover&img=1&zoom=1&edge=curl&source=gbs_api"
-// title: "Antiken"
-// __v: 0
-// _id: "600c8a52da9eefdad186ace8"
