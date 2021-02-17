@@ -18,6 +18,11 @@ form {
   height: 56px;
   font-size: 16px;
   font-weight: 500;
+  transition: 150ms;
+}
+
+.input-search:active, .input-search:focus {
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.1);
 }
 
 .button-search {

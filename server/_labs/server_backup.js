@@ -105,7 +105,6 @@ app.delete('/books/:bookId', async (req, res) => {
 app.patch('/books/:bookId', async (req, res) => {
   const { bookId } = req.params
   if (req.body.isRead === true) {
-    console.log("Inside changing to false")
     try {
       await Book.findOneAndUpdate(
         { _id: bookId },
@@ -117,7 +116,6 @@ app.patch('/books/:bookId', async (req, res) => {
       res.status(500).json({ message: "Could not update entry" })
     }
   } else if (req.body.isRead === false) {
-    console.log("Inside changing to true")
     try {
       await Book.findOneAndUpdate(
         { _id: bookId },

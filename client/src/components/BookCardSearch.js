@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import './card.css'
 
 export const BookCardSearch = (props) => {
-  const BOOKS_POST_URL = 'http://localhost:8080/books'
+  const BOOKS_POST_URL = 'https://bookie-axel.herokuapp.com/books'
   const [buttonLabel, setButtonLabel] = useState("Add")
 
   const addBook = (book) => {
@@ -24,8 +24,7 @@ export const BookCardSearch = (props) => {
       body: JSON.stringify(bookObject)
     })
       .then(() => {
-        console.log(bookObject.thumbnail)
-        console.log(`Book ${bookObject.title} added`)
+        // console.log(`Book ${bookObject.title} added`)
       })
   }
 

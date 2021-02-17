@@ -24,9 +24,3 @@ export const Header = (props) => {
     </div>
   )
 }
-
-
-// props.icon values:
-  // ic_search
-  // ic_wantToRead
-  // ic_isRead

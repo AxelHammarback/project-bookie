@@ -4,7 +4,7 @@ import { BookCardWantToRead } from '../components/BookCardWantToRead'
 import { Header } from '../components/Header'
 
 export const WantToRead = () => {
-  const BOOKS_URL = 'http://localhost:8080/books/wantToRead'
+  const BOOKS_URL = 'https://bookie-axel.herokuapp.com/books/wantToRead'
   const [books, setBooks] = useState([])
 
   useEffect(() => {
@@ -12,14 +12,14 @@ export const WantToRead = () => {
   }, [])
 
   const setReadStatusToTrue = (_id) => {
-    fetch(`http://localhost:8080/books/${_id}`, {
+    fetch(`https://bookie-axel.herokuapp.com/books/${_id}`, {
       method: 'PATCH',
       body: JSON.stringify({ isRead: false }),
       headers: { 'Content-Type': 'application/json' },
     })
       .then(res =>
         res.json().then(json => {
-          console.log("Book updated so that the read status is 'true'")
+          // console.log("Book updated so that the read status is 'true'")
           fetchBooks()
           return json;
         })
@@ -27,13 +27,13 @@ export const WantToRead = () => {
   }
 
   const deleteBook = (_id) => {
-    fetch(`http://localhost:8080/books/${_id}`, {
+    fetch(`https://bookie-axel.herokuapp.com/books/${_id}`, {
       method: 'DELETE'
       // headers: { 'Content-Type': 'application/json' },
     })
       .then(res =>
         res.json().then(json => {
-          console.log("Book deleted successfully")
+          // console.log("Book deleted successfully")
           fetchBooks()
           return json;
         })
@@ -45,15 +45,11 @@ export const WantToRead = () => {
     fetch(BOOKS_URL)
       .then((res) => {
         // convert the resonse into json format
-        console.log(res)
         return res.json()
       })
       .then((data) => {
-        // NEED TO FILTER ON BOOKS WITH THE ISREAD=FALSE FLAG HERE
         const filteredBooks = data.filter(book => book.title)
         setBooks(filteredBooks)
-        console.log("filteredBooks")
-        console.log(filteredBooks)
       })
   }
 
