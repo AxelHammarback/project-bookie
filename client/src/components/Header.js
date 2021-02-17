@@ -8,11 +8,11 @@ import ic_search from '../assets/search-prim.svg'
 export const Header = (props) => {
   let icon
   if (props.icon === "ic_search") {
-    icon = <img src={ic_search} />
+    icon = <img src={ic_search} alt="search"/>
   } else if (props.icon === "ic_isRead") {
-    icon = <img src={ic_isRead} />
+    icon = <img src={ic_isRead} alt="is read"/>
   } else {
-    icon = <img src={ic_wantToRead} />
+    icon = <img src={ic_wantToRead} alt="want to read"/>
   }
 
   return (

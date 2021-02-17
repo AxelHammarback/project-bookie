@@ -14,7 +14,7 @@ export const App = () => {
 
   return (
     <>
-      <img className="bookie-logo-static" src={bookieLogo}/>
+      <img src={bookieLogo} className="bookie-logo-static" alt="Bookie Logo"/>
       <BrowserRouter>
         <main>
           <div className="page-content">

@@ -19,7 +19,6 @@ export const HasRead = () => {
     })
       .then(res =>
         res.json().then(json => {
-          // console.log("Book updated so that the read status is 'false'")
           fetchBooks()
           return json;
         })
@@ -32,7 +31,6 @@ export const HasRead = () => {
     })
       .then(res =>
         res.json().then(json => {
-          // console.log("Book deleted successfully")
           fetchBooks()
           return json
         })
@@ -45,7 +43,6 @@ export const HasRead = () => {
     })
       .then(res =>
         res.json().then(json => {
-          // console.log("Rating edited successfully")
           fetchBooks()
           return json
         })

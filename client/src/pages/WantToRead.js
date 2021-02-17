@@ -19,7 +19,6 @@ export const WantToRead = () => {
     })
       .then(res =>
         res.json().then(json => {
-          // console.log("Book updated so that the read status is 'true'")
           fetchBooks()
           return json;
         })
@@ -29,11 +28,9 @@ export const WantToRead = () => {
   const deleteBook = (_id) => {
     fetch(`https://bookie-axel.herokuapp.com/books/${_id}`, {
       method: 'DELETE'
-      // headers: { 'Content-Type': 'application/json' },
     })
       .then(res =>
         res.json().then(json => {
-          // console.log("Book deleted successfully")
           fetchBooks()
           return json;
         })

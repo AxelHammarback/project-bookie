@@ -43,7 +43,7 @@ export const Search = () => {
           className="button-search"
           disabled={searchQuery < 1}
         >
-          <img src={ic_search_white} />
+          <img src={ic_search_white} alt="Search"/>
         </button>
       </form>
       <section className="card-list">

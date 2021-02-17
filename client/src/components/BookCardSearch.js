@@ -13,10 +13,7 @@ export const BookCardSearch = (props) => {
       thumbnail: book.thumbnail,
       googleId: book.googleId,
       rating: null
-    }
-
-    // Change the button label. Not an ideal solution, since you can STILL add the book again. However, deadline's approaching – and some validation is better than none.
-    setButtonLabel("Book added")
+    }    
 
     fetch(BOOKS_POST_URL, {
       method: 'POST',
@@ -24,7 +21,8 @@ export const BookCardSearch = (props) => {
       body: JSON.stringify(bookObject)
     })
       .then(() => {
-        // console.log(`Book ${bookObject.title} added`)
+        // Change the button label. Not an ideal solution, since you can STILL add the book again. However, deadline's approaching – and some validation is better than none.
+        setButtonLabel("Book added")
       })
   }
 

@@ -1,5 +1,6 @@
 import React from 'react'
 
+import Rating from '@material-ui/lab/Rating'
 import './card.css'
 
 export const BookCardHasRead = (props) => {
@@ -30,18 +31,25 @@ export const BookCardHasRead = (props) => {
           <h3 className="h3-title">{props.title}</h3>
           <p className="p-author">{props.author}</p>
         </div>
+
         <div className="container-rating">
-          <p className="container-rating-text">
+        <Rating
+            value={props.rating}
+            onChange={(event, newValue) => {
+              onRateBook(newValue)
+            }} />
+          {/* <p className="container-rating-text">
             <span className="p-rating-text">Rating:</span>
-            <span className="p-rating-number"> {props.rating}</span>
-          </p>
-          <div className="container-rating-buttons">
+            <span className="p-rating-number"> {rating}</span>
+          </p> */}
+
+          {/* <div className="container-rating-buttons">
             <button className="button-rating" onClick={() => onRateBook(1)}>1</button>
             <button className="button-rating" onClick={() => onRateBook(2)}>2</button>
             <button className="button-rating" onClick={() => onRateBook(3)}>3</button>
             <button className="button-rating" onClick={() => onRateBook(4)}>4</button>
             <button className="button-rating" onClick={() => onRateBook(5)}>5</button>
-          </div>
+          </div> */}
         </div>
         <div className="card-info-bottom">
           <button className="button-primary" onClick={() => onMarkAsNotRead()}>Un-read</button>
