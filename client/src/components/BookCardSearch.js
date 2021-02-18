@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import './card.css'
 
 export const BookCardSearch = (props) => {
-  const BOOKS_POST_URL = 'https://bookie-axel.herokuapp.com/books'
+  const BOOKS_POST_URL = 'http://localhost:8080/'
   const [buttonLabel, setButtonLabel] = useState("Add")
 
   const addBook = (book) => {

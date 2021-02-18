@@ -4,7 +4,7 @@ import { BookCardWantToRead } from '../components/BookCardWantToRead'
 import { Header } from '../components/Header'
 
 export const WantToRead = () => {
-  const BOOKS_URL = 'https://bookie-axel.herokuapp.com/books/wantToRead'
+  const BOOKS_URL = 'http://localhost:8080/wantToRead'
   const [books, setBooks] = useState([])
 
   useEffect(() => {
@@ -12,7 +12,7 @@ export const WantToRead = () => {
   }, [])
 
   const setReadStatusToTrue = (_id) => {
-    fetch(`https://bookie-axel.herokuapp.com/books/${_id}`, {
+    fetch(`http://localhost:8080/${_id}`, {
       method: 'PATCH',
       body: JSON.stringify({ isRead: false }),
       headers: { 'Content-Type': 'application/json' },
@@ -26,7 +26,7 @@ export const WantToRead = () => {
   }
 
   const deleteBook = (_id) => {
-    fetch(`https://bookie-axel.herokuapp.com/books/${_id}`, {
+    fetch(`http://localhost:8080/${_id}`, {
       method: 'DELETE'
     })
       .then(res =>

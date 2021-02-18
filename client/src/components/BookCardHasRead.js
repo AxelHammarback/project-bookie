@@ -33,23 +33,11 @@ export const BookCardHasRead = (props) => {
         </div>
 
         <div className="container-rating">
-        <Rating
+          <Rating
             value={props.rating}
             onChange={(event, newValue) => {
               onRateBook(newValue)
             }} />
-          {/* <p className="container-rating-text">
-            <span className="p-rating-text">Rating:</span>
-            <span className="p-rating-number"> {rating}</span>
-          </p> */}
-
-          {/* <div className="container-rating-buttons">
-            <button className="button-rating" onClick={() => onRateBook(1)}>1</button>
-            <button className="button-rating" onClick={() => onRateBook(2)}>2</button>
-            <button className="button-rating" onClick={() => onRateBook(3)}>3</button>
-            <button className="button-rating" onClick={() => onRateBook(4)}>4</button>
-            <button className="button-rating" onClick={() => onRateBook(5)}>5</button>
-          </div> */}
         </div>
         <div className="card-info-bottom">
           <button className="button-primary" onClick={() => onMarkAsNotRead()}>Un-read</button>
