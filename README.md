@@ -1,4 +1,4 @@
-# project-bookie
+# Bookie 📚
 
 Bookie is an organizer for your books. Add any book to your "Want to read" list, and when you're done – mark it as read, and give it a rating!
 
