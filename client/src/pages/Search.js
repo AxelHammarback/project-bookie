@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { BookCardSearch } from '../components/BookCardSearch'
 import { Header } from '../components/Header'
 import ic_search_white from '../assets/search-white.svg'
+import img_placeholder from '../assets/book-placeholder.png'
 import '../components/searchbar.css'
 
 export const Search = () => {
@@ -61,7 +62,7 @@ export const Search = () => {
                 // Since some entries didn't have a thumbnail, we need to check whether the thumbnail exists or not.
                 typeof book.volumeInfo.imageLinks !== "undefined"
                   ? book.volumeInfo.imageLinks.thumbnail
-                  : "Has no image"
+                  : img_placeholder
               }
               key={book.id}
             />

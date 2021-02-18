@@ -3,8 +3,9 @@ import React, { useState } from 'react'
 import './card.css'
 
 export const BookCardSearch = (props) => {
-  const BOOKS_POST_URL = 'http://localhost:8080/'
+  const BOOKS_POST_URL = 'https://bookie-axel.herokuapp.com/books'
   const [buttonLabel, setButtonLabel] = useState("Add")
+  const [buttonDisabled, setButtonDisabled] = useState(false)
 
   const addBook = (book) => {
     const bookObject = {
@@ -21,8 +22,8 @@ export const BookCardSearch = (props) => {
       body: JSON.stringify(bookObject)
     })
       .then(() => {
-        // Change the button label. Not an ideal solution, since you can STILL add the book again. However, deadline's approaching – and some validation is better than none.
         setButtonLabel("Book added")
+        setButtonDisabled(true)
       })
   }
 
@@ -41,11 +42,11 @@ export const BookCardSearch = (props) => {
           <p className="p-author">{props.author}</p>
         </div>
         <div className="card-info-bottom">
-          <button className="button-primary" onClick={() => addBook(props)}>
+          <button className="button-primary" disabled={buttonDisabled} onClick={() => addBook(props)}>
             {buttonLabel}
           </button>
         </div>
       </div>
-    </div >
+    </div>
   )
 }

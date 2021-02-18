@@ -31,9 +31,6 @@ export const BookCardWantToRead = (props) => {
           <button className="button-primary" onClick={() => onDeleteBook()}>Remove</button>
         </div>
       </div>
-      <div className="card-actions">
-        {/* <p>◆</p> */}
-      </div>
     </div >
   )
 }

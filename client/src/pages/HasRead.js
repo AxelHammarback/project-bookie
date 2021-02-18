@@ -4,7 +4,7 @@ import { BookCardHasRead } from '../components/BookCardHasRead'
 import { Header } from '../components/Header'
 
 export const HasRead = () => {
-  const BOOKS_URL = 'http://localhost:8080/books/isRead'
+  const BOOKS_URL = 'https://bookie-axel.herokuapp.com/books/isRead'
   const [books, setBooks] = useState([])
 
   useEffect(() => {
@@ -12,7 +12,7 @@ export const HasRead = () => {
   }, [])
 
   const setReadStatusToFalse = (_id) => {
-    fetch(`http://localhost:8080/books/${_id}`, {
+    fetch(`https://bookie-axel.herokuapp.com/books/${_id}`, {
       method: 'PATCH',
       body: JSON.stringify({ isRead: true }),
       headers: { 'Content-Type': 'application/json' },
@@ -26,7 +26,7 @@ export const HasRead = () => {
   }
 
   const deleteBook = (_id) => {
-    fetch(`http://localhost:8080/${_id}`, {
+    fetch(`https://bookie-axel.herokuapp.com/books/${_id}`, {
       method: 'DELETE',
     })
       .then(res =>
@@ -38,7 +38,7 @@ export const HasRead = () => {
   }
 
   const rateBook = (_id, rating) => {
-    fetch(`http://localhost:8080/setRating/${_id}/${rating}`, {
+    fetch(`https://bookie-axel.herokuapp.com/books/setRating/${_id}/${rating}`, {
       method: 'PATCH'
     })
       .then(res =>
